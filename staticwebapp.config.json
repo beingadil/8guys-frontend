@@ -1,0 +1,34 @@
+{
+  "globalSettings": {
+    "apiDefinitions": {
+      "openApiVersion": 3
+    }
+  },
+  "routes": [
+    {
+      "route": "/api/*",
+      "backendUri": "https://8guys-backend-hwbeercwg8dcbrfv.eastasia-01.azurewebsites.net/api/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/uploads/*",
+      "backendUri": "https://8guys-backend-hwbeercwg8dcbrfv.eastasia-01.azurewebsites.net/uploads/*",
+      "allowedRoles": ["anonymous"]
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/images/*",
+      "/*.{js,css,json,ico,png,jpg,jpeg,gif,svg,webp,woff,woff2,ttf,eot}"
+    ]
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-cache, no-store, must-revalidate",
+    "X-Content-Type-Options": "nosniff"
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".js": "application/javascript"
+  }
+}
